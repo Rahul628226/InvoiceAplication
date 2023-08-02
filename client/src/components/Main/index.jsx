@@ -196,6 +196,17 @@ export default function Main() {
 									</ListItemButton>
 								</Link>
 							</ListItem>
+
+							<ListItem disablePadding>
+								<Link to="/template" style={{ textDecoration: 'none', color: 'inherit' }}>
+									<ListItemButton>
+										<ListItemIcon>
+											<AddIcon />
+										</ListItemIcon>
+										<ListItemText primary="Add Template" />
+									</ListItemButton>
+								</Link>
+							</ListItem>
 						</>
 					)}
 

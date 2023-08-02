@@ -13,6 +13,7 @@ import ManagePayment from "./components/Payment/ManagePayment";
 import AddInvoice from "./components/Invoice/AddInvoice";
 import InvoiceTable from "./components/Invoice/ManageInvoice";
 import Index from "./components/Common/Index";
+import Template from "./components/Common/Template";
 
 function App() {
 	const user = localStorage.getItem("token");
@@ -40,6 +41,7 @@ function App() {
 				<Route path="/addInvoice" element={<AddInvoice/>}/>
 				<Route path="/displayInvoice" element={<InvoiceTable></InvoiceTable>}/>
 				<Route path="/index" element={<Index/>} />
+				<Route path="/template" element={<Template/>}/>
 			</Routes>
 		</div>
 	);

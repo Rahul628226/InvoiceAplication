@@ -35,5 +35,8 @@ app.use('/Image', express.static('Image'));
 const InvoiceRouter=require('./routes/invoices')
 app.use('/',InvoiceRouter)
 
+const TemplateRouter=require('./routes/templates')
+app.use('/',TemplateRouter)
+
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));

@@ -112,6 +112,7 @@ const PDFInvoice = ({ invoice }) => {
   const [backgroundImageBase64, setBackgroundImageBase64] = useState('');
   const [logoImageBase64, setLogoImageBase64] = useState('');
   const [companies, setCompanies] = useState([]);
+  const [Templates, settemplate] = useState([]);
   const [payments, setpayment] = useState([]);
 
 
@@ -119,6 +120,15 @@ const PDFInvoice = ({ invoice }) => {
     try {
       const response = await axios.get('http://localhost:8080/api/Companyslist');
       setCompanies(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const fetchTemplates = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/api/templatelist');
+      settemplate(response.data);
     } catch (error) {
       console.error(error);
     }
@@ -137,13 +147,20 @@ const PDFInvoice = ({ invoice }) => {
     // Load the background image and convert it to base64
     const loadImage = async () => {
       try {
-        const response = await fetch(backgroundImage);
-        const blob = await response.blob();
-        const reader = new FileReader();
-        reader.onload = () => {
-          setBackgroundImageBase64(reader.result);
-        };
-        reader.readAsDataURL(blob);
+        // Fetch the background image from the API
+        const response = await axios.get('http://localhost:8080/api/templatelist');
+        // Assuming that the response contains the image URL in the 'image' property
+        const imageUrl = response.data[0]?.image; // Change the index as needed to access the correct image
+        if (imageUrl) {
+          // Load the image from the URL and convert it to base64
+          const imageResponse = await fetch(imageUrl);
+          const imageBlob = await imageResponse.blob();
+          const reader = new FileReader();
+          reader.onload = () => {
+            setBackgroundImageBase64(reader.result);
+          };
+          reader.readAsDataURL(imageBlob);
+        }
       } catch (e) {
         console.error('Failed to load the background image:', e);
       }
