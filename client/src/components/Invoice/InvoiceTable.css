@@ -1,0 +1,29 @@
+/* InvoiceTable.css */
+.invoice-table-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 180px;
+  }
+  
+  .invoice-table {
+    width: 100%;
+  }
+  
+  .invoice-table th,
+  .invoice-table td {
+    font-size: 14px;
+    padding: 8px;
+    border: 10px;
+  }
+  
+  .invoice-table th {
+    background-color: #e0c7c7;}
+
+.delete-button {
+  visibility: hidden; /* Hide the delete button by default */
+  transition: visibility 0.2s ease-in-out;
+}
+
+.product-row:hover .delete-button {
+  visibility: visible; /* Show the delete button on hover */
+}

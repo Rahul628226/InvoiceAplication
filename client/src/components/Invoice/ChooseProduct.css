@@ -1,0 +1,56 @@
+.container {
+    margin: 20px;
+  }
+  
+  .product-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .product-form select,
+  .product-form input {
+    margin-right: 10px;
+  }
+  
+  .product-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .actions button {
+    margin-left: 5px;
+  }
+  
+  .tax-options {
+    margin-top: 10px;
+  }
+  
+  .discount-input {
+    margin-top: 10px;
+  }
+  
+  .amounts {
+    margin-top: 10px;
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
